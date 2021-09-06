@@ -7,7 +7,7 @@ body {
 h2 {
   font-size: 26px;
   font-weight: 400;
-  margin: 0 10px 10px 10px;
+  margin: 20px 10px 15px 10px;
   text-align: center;
 }
 
@@ -22,16 +22,19 @@ p {
 }
 
 section {
-  padding: 20px;
+  padding: 0 20px 20px;
 }
 
 section.alternate-background {
   background-color: #00a699;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+  margin-bottom: 23px;
 }
 
 /* ---  Groups & Items --- */
@@ -39,15 +42,6 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
-}
-
-.item {
-  flex: 1;
-  margin: 10px;
-}
-
-.item-double {
-  flex: 2;
 }
 
 /* -------  Navigation ------- */
@@ -64,14 +58,29 @@ header {
   color: #fff;
 }
 
+#menu {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  padding-bottom: 18px;
+}
+
 header nav ul li {
   list-style-type: none;
+  display: flex;
+  padding: 0;
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 0 20px 0 0;
+}
+
+header nav ul li:last-of-type a {
+  color: #fff;
+  text-decoration: none;
+  padding-right: 0;
 }
 
 header nav ul li a:hover {
@@ -82,7 +91,14 @@ header nav ul li a:hover {
 /* -------  Search Form ------- */
 form {
   border: 2px solid #ff385c;
-  padding: 10px;
+  padding: 20px 15px 10px;
+  display: flex;
+  flex-direction: column;
+}
+form div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
 }
 
 form label {
@@ -103,6 +119,23 @@ form button {
   padding: 15px;
   width: 100%;
 }
+/* -------  About ------- */
+
+.alternate-background h2 {
+  margin: 17px;
+}
+.alternate-background p {
+  margin-bottom: 5px;
+}
+
+/* ------- Ideas ------- */
+
+#ideas h2{
+  margin-bottom: 27px;
+}
+#ideas img:last-of-type {
+  margin-bottom: 9px;
+}
 
 /* -------  Footer ------- */
 
@@ -117,3 +150,82 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 480px) {
+  /* ------- header ------- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    align-self: center;
+  }
+  header {
+    padding: 10px 20px;
+    }
+  #menu {
+    padding-bottom: 0;
+    }
+  header nav ul li a {
+    font-size: 19px;
+  }
+  /* ------- search form ------- */
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  form div {
+    flex-direction: column;
+    margin-right:3%
+  }
+  input, select {
+    height: 25px;
+  }
+  form button {
+    width: 200px;
+  }
+    /* ------- about ------- */
+  .alternate-background {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+  .about-desktop {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .item {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .item-double {
+    flex: 2;
+    align-self: center;
+    margin-left: 17px;
+  }
+  /* ------- ideas ------- */
+.ideas-desktop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.idea-items {
+  margin: 10px;
+  width: 48%;
+}
+/* ------- host ------- */
+.host-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 10px 0;
+}
+.host-item {
+  flex: 1;
+  margin: 0 5px;
+}
+}
